@@ -10,12 +10,15 @@ export class TodosComponent implements OnInit {
   addTask(newTask: string) {
     if (newTask) {
       this.tasks.push(newTask)
+      let index = this.tasks.indexOf(newTask)
+      console.log('Task: ' + newTask + '. Index: ' + index)
     }
   }
 
   removeTask(task: string) {
     if (task) {
-      this.tasks.pop()
+      let index = this.tasks.indexOf(task)
+      this.tasks.splice(index, 1)
     }
   }
 
