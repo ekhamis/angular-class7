@@ -1,16 +1,3 @@
-<h1>{{title}}</h1>
-<h3>{{fullName}} {{title2}}</h3>
-<h4>Add or Remove Tasks:</h4>
-<div>
-  <input #newTask (keyup.enter)="addTask(newTask.value)" (blur)="addTask(newTask.value); newTask.value='' ">
-
-  <button (click)="addTask(newTask.value)">Add</button>
-
-  <input #task (keyup.enter)="removeTask(task.value)" (blur)="removeTask(task.value); task.value='' ">
-
-  <button (click)="removeTask(task.value)">Remove</button>
-
-  <ul>
-    <li *ngFor="let todo of tasks" id="(keyup.enter)">{{todo}}</li>
-  </ul>
-  <div>
+<!--Thanks to Jim & Daan for mentoring-->
+<h1>{{title}} | {{fullName}}</h1>
+<app-todos></app-todos>

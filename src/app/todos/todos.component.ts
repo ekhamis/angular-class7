@@ -1,16 +1,16 @@
 //Thanks to Jim & Daan for mentoring
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-todos',
+  templateUrl: './todos.component.html',
+  styles: [`
+            li {color: darkgoldenrod;}
+            h4 {color: darkblue;}
+          `]
 })
-export class AppComponent {
-  title = 'Angular W1 HomeWork'
-  fullName = 'Eyad Khamis'
-
+export class TodosComponent implements OnInit {
   tasks: string[] = []
 
   addTask(newTask: string) {
@@ -26,4 +26,9 @@ export class AppComponent {
       this.tasks = this.tasks.filter(deleteTask => deleteTask !== task)
     }
   }
+  constructor() { }
+
+  ngOnInit() {
+  }
+
 }
